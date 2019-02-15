@@ -1,0 +1,150 @@
+<html>
+      
+  <head>
+     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+   </head>
+        <script type="text/javascript">
+            
+    //Challenge one
+    
+    function twoNum() 
+    {
+        var num1, mum2;
+        num1 = parseInt((document.getElementById("D").value));
+        num2 = parseInt(document.getElementById("E").value);
+        
+        //num1 = parseInt(num1.value);
+        //num2 = parseInt(num2.value);
+
+      if(num1 === 65 || num2 === 65) {
+          alert(true);
+      } else if(num1 + num2 === 65){
+          alert(true);
+      } else {
+          alert(false);
+      }
+    }
+   //ss console.log(twoNum(20, 65));
+        
+        
+
+//challenge 2
+    function getArea(){
+        
+    var num1, num2, num3
+    num1 = parseInt(document.getElementById("F").value);
+    num2 = parseInt(document.getElementById("G").value);
+    num3 = parseInt(document.getElementById("H").value);
+    var r = (num1 + num2 + num3)/2;
+    var area = (Math.sqrt(r*((r - num1)*(r - num2)*(r - num3))));
+        alert(area + " cm\u00B2");
+    }
+    
+
+
+  //challenge three
+  
+  function largest()
+  {
+    var num1, num2, num3;
+    num1 = document.getElementById("I");
+    num2 = document.getElementById("J");
+    num3 = document.getElementById("K");
+
+       num1 = parseInt(num1.value);
+       num2 = parseInt(num2.value);
+       num3 = parseInt(num3.value);
+
+    if(num1 > num2 && num1 > num3)
+      {
+        alert(num1+"-is greatest");
+      }
+    else if(num2 > num1 && num2 > num3)
+      {
+        alert(num2+"-is greatest");
+      }
+    else if(num3 > num1 && num3 > num1)
+      {
+        alert(num3+"-is greatest");
+      }
+
+  }
+      
+      //Challenge 4
+      
+      function timeConvert() 
+    {
+      var num1;
+      num1 = parseInt(document.getElementById("L").value);
+      var hours = (num1 / 60);
+      var rhours = Math.floor(hours);
+      var minutes = (hours - rhours)* 60;
+      var rminutes = Math.round(minutes);
+      alert(num1 + " minutes = " + rhours + "hour(s) and" + rminutes + "minute(s)");
+
+    }
+
+    
+    //Challenge 5
+    
+    function common_str()
+    {
+        var str1, str2;
+        str1 = String(document.getElementById("M").value);
+        var str2;
+        str2 = String(document.getElementById("N").value);
+          
+      var first = str1.replace(/ /g, "");
+      var second = str2.replace(/ /g, "");
+      var result = [];
+    
+      for(var i = 0; i < first.length; i++)
+      {             
+        if(second.indexOf(first[i]) !== -1 && result.indexOf(first[i]) === -1)
+          {
+            result.push(first[i]);              
+          }
+      }alert(result);
+    }
+            
+  </script>
+  <body>
+      
+      <h1>Boot Camp Challenge!</h1>
+      
+      <h2> Checks two numbers and returns true if one of the numbers is 65 or if their sum is 65.
+      </h2> 
+      
+      Enter number 1: <input type="text" id = "D"><br>
+      Enter number 2: <input type="text" id = "E"><br>
+      <center><button onclick ="twoNum()">Check</button></center>
+      <hr color = "darkcyan">
+      
+      <h3>Calculate the area of a triangle</h3> 
+      Enter number 1: <input type="text" id = "F"><br>
+      Enter number 2: <input type="text" id = "G"><br>
+      Enter number 2: <input type="text" id = "H"><br>
+      <center><button onclick ="getArea()">Calculate</button></center>
+      <hr color = "darkcyan">
+      
+      <h4>Calculate the largest number</h4><br>
+      Enter number 1: <input type="text" id = "I"><br>
+      Enter number 2: <input type="text" id = "J"><br>
+      Enter number 3: <input type="text" id = "K"><br>
+      <center><button onclick ="largest()">Calculate</button></center>
+      <hr color = "darkcyan">
+
+     <h5>Converts mintes into hours and minutes</h5>
+     <br>
+     Enter minutes: <input type="text" id = "L"><br>                   <center><button onclick ="timeConvert()">Convert</button></center>
+     <hr color = "darkcyan">
+      
+     <h6>Cheks for common letters in two words</h6>
+     Enter string one: <input type="text" id = "M"><br>
+     Enter string two: <input type="text" id = "N"><br>
+     <center><button onclick ="common_str()">Check</button></center>
+            
+</body>
+</html>
